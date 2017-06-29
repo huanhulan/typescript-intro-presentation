@@ -209,6 +209,27 @@
   </ul>  
 </section>
 
+<section class="slide">
+  <h2>类型保护</h2>
+  <p>类型保护就是一些表达式，它们会在运行时检查以确保在某个作用域里的类型。 要定义一个类型 保护，我们只要简单地定义一个函数，它的返回值是一个类型谓词</p>
+  <p>谓词为parameterName is Type这种形式，parameterName必须是来自于当前函数签名里的一个参数名。</p>
+  <pre><code>function isFish(pet: Fish | Bird): pet is Fish {
+    return (<Fish>pet).swim !== undefined;
+}</code></pre>
+  <div class="slide">
+    <h3>typeof类型保护</h3>
+    <ul>
+      <li>typeof v === "typename"</li>
+      <li>typeof v !== "typename"</li>
+      <li>"typename"必须是"number"，"string"，"boolean"或"symbol"</li>
+    </ul>
+  </div>
+    <div class="slide">
+    <h3>instanceof类型保护</h3>
+    <p>instanceof的右侧要求是一个构造函数，TypeScript将细化为: 此构造函数的prototype属性的类型。</p>
+  </div>
+</section>
+
 <section class="slide"> 
   <h2>函数类型</h2>
   
